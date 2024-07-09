@@ -1,4 +1,7 @@
 <?php
+// 允许跨站
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET');
 // 设置API路径
 define('API_URI', api_uri());
 // 设置中文歌词
