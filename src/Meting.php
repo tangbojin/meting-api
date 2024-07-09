@@ -825,12 +825,15 @@ class Meting
     {
         switch ($this->server) {
             case 'netease':
+            $size = 300;
             $url = 'https://p3.music.126.net/'.$this->netease_encryptId($id).'/'.$id.'.jpg?param='.$size.'y'.$size;
             break;
             case 'tencent':
+            $size = 300;
             $url = 'https://y.gtimg.cn/music/photo_new/T002R'.$size.'x'.$size.'M000'.$id.'.jpg?max_age=2592000';
             break;
             case 'xiami':
+            $size = 300;
             $format = $this->format;
             $data = $this->format(false)->song($id);
             $this->format = $format;
@@ -839,6 +842,7 @@ class Meting
             $url = str_replace('http:', 'https:', $url).'@1e_1c_100Q_'.$size.'h_'.$size.'w';
             break;
             case 'kugou':
+            $size = 300;
             $format = $this->format;
             $data = $this->format(false)->song($id);
             $this->format = $format;
@@ -847,6 +851,7 @@ class Meting
             $url = str_replace('{size}', '400', $url);
             break;
             case 'baidu':
+            $size = 300;
             $format = $this->format;
             $data = $this->format(false)->song($id);
             $this->format = $format;
@@ -854,6 +859,7 @@ class Meting
             $url = isset($data['songinfo']['pic_radio']) ? $data['songinfo']['pic_radio'] : $data['songinfo']['pic_small'];
             break;
 			case 'kuwo':
+            $size = 300;
 			$format = $this->format;
             $data = $this->format(false)->song($id);
             $this->format = $format;
